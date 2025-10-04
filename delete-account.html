@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - Escort Agency Employee Management App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #000;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #000;
+            margin-top: 30px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            color: #000;
+            margin-top: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul {
+            margin-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        .form-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #c82333;
+        }
+        
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 3px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            padding: 15px;
+            border-radius: 3px;
+            margin: 20px 0;
+        }
+        
+        .back-link {
+            color: #007bff;
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Privacy Policy</a>
+    
+    <h1>Delete Account Request</h1>
+    <p>Use this form to request the deletion of your account and associated data from our Escort Agency Employee Management application.</p>
+    
+    <div class="warning">
+        <h3>⚠️ Important Warning</h3>
+        <p><strong>Account deletion is permanent and cannot be undone.</strong> Once your account is deleted:</p>
+        <ul>
+            <li>All your personal data will be permanently removed</li>
+            <li>You will lose access to all app features</li>
+            <li>You will need to create a new account if you want to use our services again</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <h3>📋 What Happens When You Delete Your Account</h3>
+        <p><strong>Data that will be immediately deleted:</strong></p>
+        <ul>
+            <li>Personal profile information</li>
+            <li>Contact details</li>
+            <li>App usage data</li>
+            <li>Authentication credentials</li>
+        </ul>
+        
+        <p><strong>Data that may be retained for legal compliance:</strong></p>
+        <ul>
+            <li>Employment records (up to 7 years as required by employment law)</li>
+            <li>System logs (up to 1 year for security and audit purposes)</li>
+        </ul>
+        
+        <p><strong>Timeline:</strong> Deleted data will be removed from active systems within 30 days, and from backup systems within 90 days.</p>
+    </div>
+    
+    <div class="form-container">
+        <h2>Account Deletion Request Form</h2>
+        <p>Please fill out the form below to request account deletion. We will process your request within 5 business days.</p>
+        
+        <form id="deletionForm" onsubmit="sendDeletionRequest(event)">
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="employeeId">Employee ID *</label>
+                <input type="text" id="employeeId" name="employeeId" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="reason">Reason for Account Deletion (Optional)</label>
+                <textarea id="reason" name="reason" placeholder="Please provide any additional information about why you want to delete your account..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="confirmDeletion" name="confirmDeletion" required>
+                    I understand that account deletion is permanent and cannot be undone. I confirm that I want to delete my account and all associated data.
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="confirmData" name="confirmData" required>
+                    I understand that some data may be retained for legal compliance purposes as described above.
+                </label>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Deletion Request</button>
+        </form>
+    </div>
+    
+    <div class="info-box">
+        <h3>📞 Alternative Contact Methods</h3>
+        <p>If you prefer to contact us directly:</p>
+        <p><strong>Email:</strong> punjabservices1996@gmail.com</p>
+        <p><strong>Phone:</strong> +92 3004678614</p>
+        <p><strong>Contact Person:</strong> Malik Asad</p>
+    </div>
+    
+    <script>
+        function sendDeletionRequest(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Create email content
+            const emailSubject = "Account Deletion Request - " + data.fullName;
+            const emailBody = `
+Account Deletion Request Details:
+
+Full Name: ${data.fullName}
+Email: ${data.email}
+Employee ID: ${data.employeeId}
+Phone: ${data.phone || 'Not provided'}
+Reason: ${data.reason || 'Not provided'}
+
+Request Date: ${new Date().toLocaleString()}
+
+Please process this account deletion request within 5 business days.
+
+---
+This request was submitted through the online deletion form.
+            `;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:punjabservices1996@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show confirmation message
+            alert('Your deletion request has been prepared. Please send the email that opens in your email client to complete the request. We will process your request within 5 business days.');
+        }
+    </script>
+</body>
+</html>
